@@ -1,0 +1,36 @@
+'use strict';
+
+module.exports = {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable(
+      'send_documents',
+      {
+        id: {
+          type: Sequelize.INTEGER,
+          autoIncrement: true,
+          primaryKey: true,
+          allowNull: false
+        },
+        date: Sequelize.DATE,
+        coordId: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          references: {
+            model: "coords",
+            key: "id"
+          },
+          onUpdate: "CASCADE",
+          onDelete: "CASCADE"
+        },
+      },
+      {
+        engine: 'InnoDB',
+        charset: 'latin1'
+      }
+    )
+  },
+
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('send_documents')
+  }
+};
