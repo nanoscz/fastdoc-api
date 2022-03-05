@@ -16,7 +16,7 @@ module.exports = {
           allowNull: false,
           unique: true
         },
-        model: {
+        color: {
           type: Sequelize.STRING(15),
           allowNull: false
         },

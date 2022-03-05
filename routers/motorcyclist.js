@@ -12,10 +12,16 @@ router
   .post(motorcyclistController.create)
 
 router
+  .route('/user/:id')
+  .get(motorcyclistController.findOneByUserId)
+
+  router
   .route('/:id')
   .get(motorcyclistController.findOne)
   .patch(motorcyclistController.update)
   .delete(motorcyclistController.delete)
+
+
 
 module.exports = {
   motorcyclistChildRouter: router

@@ -1,10 +1,10 @@
 'use strict'
 
-const Employee = require('../models').employees
+const shippingDocument = require('../models').shippingDocuments
 
-class EmployeeController {
+class ShippingDocumentController {
   findAll (req, res, next) {
-    Employee.findAll()
+    shippingDocument.findAll()
       .then(data => {
         res.json(data)
       })
@@ -12,16 +12,7 @@ class EmployeeController {
   }
 
   findOne (req, res, next) {
-    Employee.findOne({ where: { id: req.params.id } })
-      .then(data => {
-        res.json(data)
-      })
-      .catch(err => next(err))
-  }
-
-  findOneByUserId (req, res, next) {
-    console.log({ userId: req.params.id })
-    Employee.findOne({ where: { userId: req.params.id } })
+    shippingDocument.findOne({ where: { id: req.params.id } })
       .then(data => {
         res.json(data)
       })
@@ -29,23 +20,24 @@ class EmployeeController {
   }
 
   create (req, res, next) {
-    Employee.create(req.body)
+    console.log("create shipping document", res.body)
+    shippingDocument.create(req.body)
       .then((data) => res.status(201).json(data))
       .catch(err => next(err))
   }
 
   update (req, res, next) {
     const body = req.body
-    Employee.update(body, { where: { id: req.params.id } })
+    shippingDocument.update(body, { where: { id: req.params.id } })
       .then(() => res.status(200).end())
       .catch(err => next(err))
   }
 
   delete (req, res, next) {
-    Employee.destroy({ where: { id: req.params.id } })
+    shippingDocument.destroy({ where: { id: req.params.id } })
       .then(() => res.status(204).end())
       .catch(err => next(err))
   }
 }
 
-module.exports = EmployeeController
+module.exports = ShippingDocumentController

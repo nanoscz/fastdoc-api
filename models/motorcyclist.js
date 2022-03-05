@@ -27,10 +27,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(8),
         allowNull: false
       },
-      position: {
-        type: DataTypes.GEOMETRY('POINT'),
-        allowNull: true
-      },
       enabled: {
         type: DataTypes.BOOLEAN,
         allowNull: false,

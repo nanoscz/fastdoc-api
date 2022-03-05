@@ -12,7 +12,17 @@ class MotorcyclistController {
   }
 
   findOne (req, res, next) {
-    Motorcyclist.findOne({ where: { id: req.params.id } })
+    Motorcyclist.findOne({ 
+      where: { id: req.params.id }
+    })
+      .then(data => {
+        res.json(data)
+      })
+      .catch(err => next(err))
+  }
+
+  findOneByUserId (req, res, next) {
+    Motorcyclist.findOne({ where: { userId: req.params.id } })
       .then(data => {
         res.json(data)
       })

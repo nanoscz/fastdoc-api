@@ -19,6 +19,14 @@ class ClientController {
       .catch(err => next(err))
   }
 
+  findOneByUserId (req, res, next) {
+    Client.findOne({ where: { userId: req.params.id } })
+      .then(data => {
+        res.json(data)
+      })
+      .catch(err => next(err))
+  }
+
   create (req, res, next) {
     Client.create(req.body)
       .then((data) => res.status(201).json(data))

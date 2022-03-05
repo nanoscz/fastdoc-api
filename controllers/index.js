@@ -4,6 +4,9 @@ const MotorcycleController = require('./motorcycle')
 const MotorcyclistController = require('./motorcyclist')
 const RoleController = require('./role')
 const UserController = require('./user')
+const CoordController = require('./coords')
+const ShippingDetailController = require('./shippingDetail')
+const ShippingDocumentController = require('./shippingDocument')
 
 module.exports = {
   ClientController,
@@ -11,5 +14,8 @@ module.exports = {
   MotorcycleController,
   MotorcyclistController,
   UserController,
-  RoleController
+  RoleController,
+  CoordController,
+  ShippingDetailController,
+  ShippingDocumentController
 }

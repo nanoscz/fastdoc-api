@@ -12,6 +12,10 @@ router
   .post(employeeController.create)
 
 router
+  .route('/user/:id')
+  .get(employeeController.findOneByUserId)
+
+router
   .route('/:id')
   .get(employeeController.findOne)
   .patch(employeeController.update)

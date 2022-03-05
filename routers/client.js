@@ -12,6 +12,10 @@ router
   .post(clientController.create)
 
 router
+  .route('/user/:id')
+  .get(clientController.findOneByUserId)
+
+router
   .route('/:id')
   .get(clientController.findOne)
   .patch(clientController.update)

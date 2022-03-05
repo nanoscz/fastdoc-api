@@ -33,10 +33,6 @@ module.exports = {
           allowNull: false,
           defaultValue: true
         },
-        position: {
-          type: Sequelize.GEOMETRY('POINT'),
-          allowNull: true
-        },
         userId: {
           type: Sequelize.INTEGER,
           allowNull: false,

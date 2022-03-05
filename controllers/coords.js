@@ -1,10 +1,10 @@
 'use strict'
 
-const Employee = require('../models').employees
+const Coord = require('../models').coords
 
-class EmployeeController {
+class CoordController {
   findAll (req, res, next) {
-    Employee.findAll()
+    Coord.findAll()
       .then(data => {
         res.json(data)
       })
@@ -12,16 +12,7 @@ class EmployeeController {
   }
 
   findOne (req, res, next) {
-    Employee.findOne({ where: { id: req.params.id } })
-      .then(data => {
-        res.json(data)
-      })
-      .catch(err => next(err))
-  }
-
-  findOneByUserId (req, res, next) {
-    console.log({ userId: req.params.id })
-    Employee.findOne({ where: { userId: req.params.id } })
+    Coord.findOne({ where: { id: req.params.id } })
       .then(data => {
         res.json(data)
       })
@@ -29,23 +20,23 @@ class EmployeeController {
   }
 
   create (req, res, next) {
-    Employee.create(req.body)
+    Coord.create(req.body)
       .then((data) => res.status(201).json(data))
       .catch(err => next(err))
   }
 
   update (req, res, next) {
     const body = req.body
-    Employee.update(body, { where: { id: req.params.id } })
+    Coord.update(body, { where: { id: req.params.id } })
       .then(() => res.status(200).end())
       .catch(err => next(err))
   }
 
   delete (req, res, next) {
-    Employee.destroy({ where: { id: req.params.id } })
+    Coord.destroy({ where: { id: req.params.id } })
       .then(() => res.status(204).end())
       .catch(err => next(err))
   }
 }
 
-module.exports = EmployeeController
+module.exports = CoordController

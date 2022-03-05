@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable(
-      'send_documents',
+      'coords',
       {
         id: {
           type: Sequelize.INTEGER,
@@ -11,16 +11,13 @@ module.exports = {
           primaryKey: true,
           allowNull: false
         },
-        date: Sequelize.DATE,
-        coordId: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-          references: {
-            model: "coords",
-            key: "id"
-          },
-          onUpdate: "CASCADE",
-          onDelete: "CASCADE"
+        origin: {
+          type: Sequelize.GEOMETRY('POINT'),
+          allowNull: true
+        },
+        destination: {
+          type: Sequelize.GEOMETRY('POINT'),
+          allowNull: true
         },
       },
       {
@@ -31,6 +28,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('send_documents')
+    return queryInterface.dropTable('coords')
   }
 };

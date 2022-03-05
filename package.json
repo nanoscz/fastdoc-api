@@ -8,7 +8,7 @@
     "lint": "standard",
     "lint:fix": "standard -- --fix",
     "start": "node server.js",
-    "migrate": "./node_modules/.bin/sequelize db:migrate --url=mysql://root@127.0.0.1/fastdocdb"
+    "migrate": "./node_modules/.bin/sequelize db:migrate --url=mysql://root@127.0.0.1/fastdocdb1"
   },
   "author": "",
   "license": "ISC",
