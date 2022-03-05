@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       tableName: 'motorcycles',
       defaultScope: {
-        attributes: { exclude: ['createdAt', 'updatedAt'] }
+        attributes: { exclude: ['createdAt', 'updatedAt', 'motorcycleId'] }
       }
     }
   )

@@ -25,9 +25,9 @@ module.exports = (sequelize, DataTypes) => {
         field: 'employeeId',
         primaryKey: true
       },
-      motorcycleId: {
+      motorcyclistId: {
         type: DataTypes.INTEGER,
-        field: 'motorcycleId',
+        field: 'motorcyclistId',
         primaryKey: true
       },
       shippingDetailId: {

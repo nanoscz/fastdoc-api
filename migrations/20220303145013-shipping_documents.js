@@ -32,11 +32,11 @@ module.exports = {
             key: "id"
           }
         },
-        motorcycleId: {
+        motorcyclistId: {
           type: Sequelize.INTEGER,
           allowNull: true,
           references: {
-            model: "motorcycles",
+            model: "motorcyclists",
             key: "id"
           }
         },
